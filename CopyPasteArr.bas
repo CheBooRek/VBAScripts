@@ -36,8 +36,8 @@ PasteRng(3) = ""
 PasteRng(4) = ""
 
 For i = 0 To 4
-    CopySheet = Windows(SourceFile).Sheets(ShtName(i))
-    PasteSheet = Windows(DestFile).Sheets(ShtName(i))
+    Set CopySheet = Workbooks(SourceFile).Worksheets(ShtName(i))
+    Set PasteSheet = Workbooks(DestFile).Workheets(ShtName(i))
     For j = 0 To 4
         If j = 0 Then
             Call CopyPaste(CopySheet.Range(CopyRng(j)), PasteSheet.Range(PasteRng(j)), False)
